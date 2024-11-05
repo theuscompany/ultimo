@@ -1,0 +1,373 @@
+        :root {
+            --branco-principal: #FFFFFF;
+            --cinza-secundario: #C0C0C0;
+            --botao-azul: #167BF7;
+            --cor-de-fundo: #00030C;
+            --fonte-principal: 'Inter';
+            --botao-azul-efeito: #3c92fa;
+        }
+
+        body {
+            background-color: var(--cor-de-fundo);
+            color: var(--branco-principal);
+            font-family: var(--fonte-principal);
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .principal {
+            background-image: url("img/Background.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+        .container__botao {
+            background-color: var(--botao-azul);
+            border-radius: 5px;
+            padding: 1em;
+            color: var(--branco-principal);
+            display: block;
+            text-decoration: none;
+            margin-bottom: 1em;
+        }
+
+        .botao_secundario {
+            background-color: transparent;
+            border: 2px solid var(--branco-principal);
+        }
+
+        .container__aviso {
+            font-size: 12px;
+            color: var(--cinza-secundario);
+        }
+
+        .container__titulo {
+            font-size: 75px;
+            font-weight: 700;
+            text-shadow: 2px -2px 10px black;
+        }
+
+        .container_subtitulo {
+            font-size: 25px;
+            font-weight: 700;
+            text-shadow: 2px -2px 10px black;
+        }
+
+        .container_resumo {
+            margin-top: 15px;
+            color: rgb(153, 153, 153);
+            font-size: 15px;
+            font-weight: 700;
+            text-shadow: 2px -2px 10px black;
+        }
+
+        .container__imagem {
+            margin: 1em 0 2em 0;
+        }
+
+        .container__caixa {
+            margin: 0 6em;
+            text-align: center; /* Centraliza o texto e a imagem */
+        }
+
+        .container__caixa img {
+            width: 650px;
+            max-width: 100%; /* Faz a imagem se ajustar ao tamanho da tela */
+            height: auto; /* Mantém a proporção da imagem */
+            margin-top: 20px; /* Espaço acima da imagem, se necessário */
+        }
+
+        .secundario__imagem {
+            width: 80%;
+        }
+
+        .secundario {
+            align-items: center;
+            margin: 0 10em;
+        }
+
+        .descricao__titulo {
+            font-weight: 700;
+            font-size: 48px;
+            color: var(--branco-principal);
+            margin-bottom: 0.1em;
+        }
+
+        .descricao__texto {
+            color: var(--cinza-secundario);
+        }
+
+        .secundario__botao {
+            display: inline-block;
+            margin-top: 1em;
+        }
+
+        .container__descricao {
+            padding: 2em;
+        }
+
+        .dispositivos__lista {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            margin: 5em 0;
+        }
+
+        .dispositivos {
+            text-align: center;
+        }
+
+        .dispositivos__titulo {
+            font-size: 48px;
+            color: var(--branco-principal);
+        }
+
+        .dispositivos__item {
+            font-size: 32px;
+            color: var(--branco-principal);
+        }
+
+        .rodape {
+            text-align: center;
+            margin: 5em 3em;
+        }
+
+        .rodape__lista {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            margin-top: 1em;
+        }
+
+        .lista__link a {
+            text-decoration: none;
+            color: #999999;
+            margin-left: 1em;
+        }
+
+        .rodape__texto {
+            margin: 1em 0;
+            color: var(--cinza-secundario);
+            font-size: 14px;
+        }
+
+        .lista__link a:hover {
+            color: aqua;
+        }
+
+        .lista__link a:active {
+            color: purple;
+        }
+
+        .container__botao:hover {
+            background-color: var(--botao-azul-efeito);
+            color: var(--cor-de-fundo);
+        }
+
+        /* Novo código para a section dividida em 5 partes diagonais */
+
+        .quadrantes-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 10px;
+            width: 100vw;
+            margin: 0 auto;
+            margin-top: 10px;
+            height: 400px;
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        .quadrantes-container .quadrante {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quadrantes-container .quadrante img {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .quadrantes-container .quadrante:hover img {
+            transform: scale(1.1);
+        }
+
+        .quadrantes-container .info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .quadrantes-container .quadrante:hover .info {
+            opacity: 1;
+        }
+
+        .personagens__titulo {
+            text-align: center;
+            font-size: 48px;
+            margin: 2em 0;
+            color: var(--branco-principal);
+        }
+
+        .outros-container {
+            margin-top: 100px;
+            display: flex; /* Usa flexbox para centralizar */
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente (opcional) */
+            }
+
+        .outros-container img {
+            max-width: 80%; /* Limita a largura da imagem */
+            height: auto; /* Mantém a proporção da imagem */
+            margin: 20px 0; /* Espaço acima e abaixo da imagem */
+        }
+
+        .outros-container img {
+            max-width: 80%; /* Limita a largura da imagem */
+            height: auto; /* Mantém a proporção da imagem */
+            margin-top: 40px; /* Ajuste a quantidade conforme necessário */
+            margin-bottom: 20px; /* Espaço abaixo da imagem */
+        }
+
+        .outros-container h1 {
+            text-align: center;
+            font-size: 48px;
+            font-weight: 700;
+            text-shadow: 2px -2px 10px black;
+        }
+
+        .outros-container h3 {
+            text-align: center;
+            font-size: 18px;
+            color: #999999;
+            font-weight: 700;
+            text-shadow: 2px -2px 10px black;
+            padding-left: 300px;
+            padding-right: 300px;
+        }
+
+        .container_subtitulo {
+            font-size: 25px;
+            font-weight: 700;
+            text-shadow: 2px -2px 10px black;
+        }
+
+        .container_resumo {
+            margin-top: 15px;
+            color: rgb(153, 153, 153);
+            font-size: 15px;
+            font-weight: 700;
+            text-shadow: 2px -2px 10px black;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .container {
+                grid-template-columns: 50% 50%; /* Mantém as duas colunas */
+                padding: 10px;
+            }
+            
+            .principal {
+                background-size: contain; /* Ajuste para que a imagem de fundo não fique cortada */
+            }
+        
+            img {
+                max-width: 100%;
+                height: auto; /* Garantir que as imagens redimensionem corretamente */
+            }
+        
+            header, footer {
+                height: auto;
+                padding: 10px;
+            }
+
+            .aurelia-img {
+                width: 100%; /* Faz a imagem ocupar toda a largura do quadrante */
+                height: 100%; /* Mantém a altura */
+                max-width: 100%; /* Garante que a imagem não extrapole o contêiner */
+                object-fit: cover; /* Faz a imagem cobrir o contêiner, mantendo a proporção */
+                object-position: 20% 20%;
+                margin-top: 0px; /* Adiciona uma margem, se necessário */
+            }
+
+            .outros-container h3 {
+                text-align: center;
+                font-size: 18px;
+                color: #999999;
+                font-weight: 700;
+                text-shadow: 2px -2px 10px black;
+                padding-left: 100px;
+                padding-right: 100px;
+            }
+
+            .container__caixa {
+                margin: 0;
+                text-align: center;
+                padding: 15px;
+            }
+
+            .container__titulo {
+                font-size: 50px;
+                font-weight: 700;
+                text-shadow: 2px -2px 10px black;
+            }
+    
+            .container_subtitulo {
+                font-size: 19px;
+                font-weight: 700;
+                text-shadow: 2px -2px 10px black;
+            }
+    
+            .container_resumo {
+                color: rgb(153, 153, 153);
+                font-size: 13px;
+                font-weight: 700;
+                text-shadow: 2px -2px 10px black;
+            }
+        }
+        
+        @media screen and (max-height: 600px) {
+            header, footer {
+                padding: 5px; /* Reduzindo padding para melhor adaptação à altura */
+            }
+        
+            .container {
+                padding: 5px;
+            }
+        }
+
+        
+        
